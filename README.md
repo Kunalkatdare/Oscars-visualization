@@ -3,7 +3,7 @@
 
 Online: Group 5 
 
-![Screenhot](https://marketingland.com/wp-content/ml-loads/2015/08/movie-film-video-production-ss-1920-800x450.jpg)
+![Screenshot](https://marketingland.com/wp-content/ml-loads/2015/08/movie-film-video-production-ss-1920-800x450.jpg)
 
 
 ## About
