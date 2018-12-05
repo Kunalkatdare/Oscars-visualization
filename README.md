@@ -23,4 +23,4 @@ best picture while topping box office charts. Let's see if this is true or just 
 ## More
 [DEMO](https://nyu-vis-fall2018.github.io/storytelling-group-5/)
 
-[Project Description](Box office hit vs best picture.pdf)
+[Project Description](Project.pdf)
