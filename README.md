@@ -1,7 +1,7 @@
 # Project Name
-**Authors**: Jhon Doe (jd2545), Mark Smith (ms4568)
+**Authors**: Ajay Shete (abs717@nyu.edu), Kunal Katdare (kpk309), Vatsal Shah (vds254@nyu.edu)
 
-Group X (Online: Group Y) 
+Online: Group 5 
 
 ![Screenhot](screenshot.jpg)
 
