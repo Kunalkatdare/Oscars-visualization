@@ -1,5 +1,5 @@
 # Project Name
-**Authors**: Ajay Shete (abs717@nyu.edu), Kunal Katdare (kpk309), Vatsal Shah (vds254@nyu.edu)
+**Authors**: Ajay Shete (abs717@nyu.edu), Kunal Katdare (kpk309@nyu.edu), Vatsal Shah (vds254@nyu.edu)
 
 Online: Group 5 
 
