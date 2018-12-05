@@ -3,13 +3,13 @@
 
 Online: Group 5 
 
-![Screenhot](screenshot.jpg)
+![Screenhot]()
 
 
 ## About
-In this project we ...
+
 
 ## More
-[DEMO](https://nyu-vis-fall2018.github.io/project-template/)
+[DEMO](##)
 
 [Project Descrioption](project.pdf)
