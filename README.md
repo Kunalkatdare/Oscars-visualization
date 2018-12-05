@@ -1,4 +1,4 @@
-# Project Name
+# Box Office Hit or Best Picture? You Can Rarely Have Both.
 **Authors**: Ajay Shete (abs717@nyu.edu), Kunal Katdare (kpk309@nyu.edu), Vatsal Shah (vds254@nyu.edu)
 
 Online: Group 5 
@@ -21,6 +21,6 @@ moviegoers and film industry professionals. In the past 30 years, only four movi
 best picture while topping box office charts. Let's see if this is true or just our random deductions using information visualization.
 
 ## More
-[DEMO](##)
+[DEMO](https://nyu-vis-fall2018.github.io/storytelling-group-5/)
 
 [Project Description](Project.pdf)
