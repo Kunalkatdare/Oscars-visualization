@@ -18,9 +18,9 @@ best picture winner of all time. In 2003, The Lord of the Rings: The Return of t
 the rare popcorn event film to achieve mass appeal, earning $377 million in its theatrical run,
 and also emerge with the year’s top Oscar honor. This reflects a difference in taste between
 moviegoers and film industry professionals. In the past 30 years, only four movies were named
-best picture while topping box office charts. Let's see if this is true or just our random dedeuctions.
+best picture while topping box office charts. Let's see if this is true or just our random dedeuctions using data visualization.
 
 ## More
 [DEMO](##)
 
-[Project Descrioption](Project.pdf)
+[Project Description](Project.pdf)
