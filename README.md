@@ -7,6 +7,6 @@ Online: Group 5
 In this project we are analyzing the movie dataset and finding the relation of movies with the Academy Awards.
 
 ## More
-[DEMO](https://nyu-vis-fall2018.github.io/project-template/)
+[DEMO](index.html)
 
 [Project Description](https://slack-files.com/files-pri-safe/TCMEAQ22G-FEKMPE1DK/box_office_hit_vs_best_picture.pdf?c=1543968270-2a093b5f9c3492f64bdcdd37eefce73479f08b45)
