@@ -4,8 +4,10 @@
 Online: Group 5
 
 ## About
-In this project we are analyzing the movie dataset and finding the relation of movies with the Academy Awards.
-
+The Oscars were first hosted in 1929 and over the years have played a huge role inspiring
+numerous artists, writers, directors and creators. But often, the movies awarded by the
+Academy awards are not the audience’s favorite. We are here to show you if this theory is true
+or not using our representation.
 ## More
 [DEMO](index.html)
 
