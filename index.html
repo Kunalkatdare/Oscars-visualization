@@ -1,12 +1,370 @@
-<html>
-    <head>
-        <title>Storytelling project</title>
-        <script src="d3.js"></script>
-    </head>
-    <body>
-        <div>My amazing page will goes here</div>
-    </body>
-    <script>
-        console.log(d3);
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Information Visualization</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="post.html">INFORMATION VISUALIZATION</a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="post.html">Hollywood</a>
+            </li>
+            <!--
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header
+      class="masthead"
+      style="background-image: url('https://marketingland.com/wp-content/ml-loads/2015/08/movie-film-video-production-ss-1920-800x450.jpg')"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Box office or best picture? Can you really have both?</h1>
+              <h2 class="subheading">
+                <!--
+                  Questions look mighty complex from plethora of things happening
+                  everyday, let's dig them through to solve the untangeable!
+                -->
+              </h2>
+              <span class="meta"
+                >Created by Vatsal - Kunal - Ajay <br />For Info Viz
+                Project</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>
+              There is not a single point of uncertainty that we are living in
+              the era of Entertainment and Information. Hollywood is the source
+              of entertainment.
+            </p>
+
+            <p>
+              Is it possible for anyone to predict something in this crazy
+              industry? We have also asked the same question to many of my
+              friends and colleagues.
+            </p>
+            <p>
+              The obvious answer we have got mostly is 'Yes, Of course there
+              will be someone.' but they weren't able to explain on what certain
+              concrete factors they do feel that.
+            </p>
+
+            <p>
+              Have you ever watched a movie you liked and thought about the
+              different factors that make it successful? This visualization is
+              an attempt to explore Hollywood Industry. Lets see how the course
+              of movies has changed over the course of years.
+            </p>
+
+            <p>
+              The below graph represents the number of movies that were made
+              over the course of last 100 years. As you can see, there is an
+              exponential growth in the number of movies made during the
+              1990-2000.
+            </p>
+            <svg id="containerYearMovieCount" width="1020" height="700">
+              <g
+                id="bodyyearmoviecount"
+                style="transform:translate(50px, 50px)"
+              ></g>
+            </svg>
+            <p>
+              The number of movies being produced were affected greatly due to
+              wars. Before 1950, US was involved in the World War 1 and World
+              War 2. And the era between 1947 and 1991 was the era of Cold war.
+            </p>
+
+            <p>
+              After the termination of war, people were attracted towards
+              entertainment for distraction. This lead to a sudden demand for
+              movies and as a result the number of movies made during that
+              decade increased exponentially. And as observed, the count of
+              movies hasn't gone down after that.
+            </p>
+
+            <p>
+              This graphs represents difference in the number of movies that
+              have been made based on popular genre category. As seen in this
+              graph, maximum movies made were comedic.
+            </p>
+            <svg id="containerAll">
+              <g id="bodyGenre" style="transform:translate(50px, 0px)"></g>
+              <g id="xAxis1"></g>
+              <g id="yAxis1"></g>
+            </svg>
+
+            <p>
+              Now lets analyze how people have received the movies that have
+              been released. There is a peak between the range 6 and 8 stating
+              that most of the movies that are released are average. The descend
+              after 8 shows that very few movies are made that are exceptional.
+            </p>
+            <svg id="ScorePopularity" width="1020" height="700">
+              <g id="body1" style="transform:translate(50px, 50px)"></g>
+            </svg>
+
+            <p>
+              This was all the analysis that was done on the movie data set as a
+              whole. But how can we determine if a movie is successful? We have
+              defined the success of the movies based on the gross box office
+              and awards won.
+            </p>
+
+            <h2 class="section-heading">The Academy Awards</h2>
+
+            <p>
+              To recognize the excellence in cinematic achievements, the Academy
+              Awards, also widely known as Oscars was introduced in 1929. This
+              award ceremony is widely accepted and a major inspiration to all
+              the people working in the movie industry. It was observed that the
+              movies that win an Oscar are bound to be one of the most
+              successful movies of all time.
+            </p>
+
+            <p>
+              However, these days, Oscar winning movies are not always the
+              highest grossing movies, sometimes majority of the people are not
+              even aware that these movies exist.
+            </p>
+            <p>
+              Take James Cameron's Avatar (2008) for example, it earned more
+              than $2 billion worldwide and was an international box office hit.
+              Both critics and moviegoers loved the movie. But, the Oscar for
+              best picture that year was given to Kathryn Bigelow's Hurt Locker,
+              a movie relatively unheard of amongst moviegoers. Today, Hurt
+              Locker stands as the lowest grossing best picture winner of all
+              time. In 2003, The Lord of the Rings: The Return of the King
+              became the rare popcorn event film to achieve mass appeal, earning
+              $377 million in its theatrical run, and also emerge with the
+              year’s top Oscar honor. This reflects a difference in taste
+              between moviegoers and film industry professionals. In the past 30
+              years, only four movies were named best picture while topping box
+              office charts.
+            </p>
+
+            <div class="row">
+              <div class="column">
+                <img src="img/avatar.jpg" alt="Snow" style="width:100%" />
+              </div>
+              <div class="column">
+                <img src="img/hurtlocker.jpg" alt="Forest" style="width:100%" />
+              </div>
+            </div>
+            <p>
+              In 2015, “Star Wars: The Force Awakens,” the first live-action
+              “Star Wars” movie since 2005, opened with enormous success,
+              smashing multiple box office records. The film took in $970
+              million domestically, and more than $1 billion internationally.
+              But “Spotlight,” which tells the story of a team of investigative
+              journalists at The Boston Globe, won best picture. It took in only
+              $47 million domestically — less than 5 percent of the revenue of
+              the year’s biggest film.
+            </p>
+            <div class="row">
+              <div class="column">
+                <img src="img/starwars.jpg" alt="Snow" style="width:100%" />
+              </div>
+              <div class="column">
+                <img src="img/spotlight.jpg" alt="Forest" style="width:100%" />
+              </div>
+            </div>
+            <!--
+              <blockquote class="blockquote">
+                The dreams of yesterday are the hopes of today and the reality of
+                tomorrow. Science has not yet mastered prophecy. We predict too
+                much for the next year and yet far too little for the next ten.
+              </blockquote>
+            -->
+
+            <p>
+              Is there really a discrepancy with movies that perform well at the
+              Oscars and their performance at the box office? Lets find out!
+            </p>
+
+            <!-- <h2 class="section-heading">Reaching for the Stars</h2> -->
+
+            <p>
+              We first find out what type of genre has won the maximum academy
+              awards for Best Picture.
+            </p>
+            <svg id="containerGenre">
+              <g id="body2" style="transform:translate(50px, 0px)"></g>
+              <g id="xAxis1"></g>
+              <g id="yAxis1"></g>
+            </svg>
+
+            <!--
+              <a href="#">
+                <img class="img-fluid" src="img/post-sample-image.jpg" alt="" />
+              </a>
+            -->
+            <!--
+              <span class="caption text-muted"
+                >To go places and do things that have never been done before –
+                that’s what living is all about.</span
+              >
+            -->
+
+            <p>
+              This graph helps us to analyze how the gross box office of the
+              award winning movies have changed. You can view the year when the
+              movie was released by hovering over the bar of that movie.
+            </p>
+
+            <p>
+              Now coming to the data based on last 20 years. Lets see how movies
+              have performed on the Box office. The following scatter plot shows
+              that almost half of the movies earn a gross value less than $100k.
+              The points in orange represent the movies which won the Oscar for
+              that year.
+            </p>
+            <svg id="scatterPlot">
+              <g id="body3" style="transform:translate(50px, 0px)"></g>
+              <g id="xAxis1"></g>
+              <g id="yAxis1"></g>
+            </svg>
+
+            <p>
+              This graph helps you compare the gross box office of the award
+              winning movies and others. As you can see that from 1994 - 2003,
+              the award winning film were in the top 20 grossing movies, whereas
+              after 2004, this hasn't always been the case.
+            </p>
+
+            <blockquote>
+              Points to Take Away:<br />
+              1. The Academy has shown that it prefers artistic movies which
+              have technical innovation, originality or cultural
+              significance.<br />
+              2. Certain genre(Drama) has more chances of winning the Academy
+              award.<br />
+              3. The movies that have won an Oscar for Best Picture haven't been
+              the highest grossing movies since the past 15 years.
+            </blockquote>
+
+            <p>Visualization created with <a href="#">D3.Js</a>.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr />
+
+    <!--
+      Footer
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <p class="copyright text-muted">
+                Copyright &copy; Your Website 2018
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+    <script src="d3.js"></script>
+    <script type="text/javascript" src="vis.js"></script>
+  </body>
 </html>

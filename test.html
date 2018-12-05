@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>Storytelling project</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <style>
+    /* svg {
+      border: solid 1px black;
+      display: block;
+    }
+    body {
+      font-family: Helvetica, Arial;
+    }
+    #tooltip {
+      border: solid 1px black;
+      padding: 5px;
+      position: absolute;
+      display: none;
+      background: red;
+    }
+
+    .dot {
+      stroke: #000;
+    }
+    .line {
+      fill: none;
+      stroke: blue;
+      stroke-width: 2;
+    }
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 120px;
+      height: 75px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: #b3cccc;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    } */
+  </style>
+
+  <body>
+    <svg id="containerGross">
+      <g id="body" style="transform:translate(50px, 0px)"></g>
+      <g id="xAxis"></g>
+      <g id="yAxis"></g>
+    </svg>
+    <svg id="containerGenre">
+      <g id="body2" style="transform:translate(50px, 0px)"></g>
+      <g id="xAxis1"></g>
+      <g id="yAxis1"></g>
+    </svg>
+    <svg id="scatterPlot">
+      <g id="body3" style="transform:translate(50px, 0px)"></g>
+      <g id="xAxis1"></g>
+      <g id="yAxis1"></g>
+    </svg>
+    <div id="tooltip">Tooltip</div>
+    <svg id="ScorePopularity" width="1020" height="700">
+      <g id="body1" style="transform:translate(50px, 50px)"></g>
+    </svg>
+    <svg id="containerYearMovieCount" width="1020" height="700">
+      <g id="bodyyearmoviecount" style="transform:translate(50px, 50px)"></g>
+    </svg>
+  </body>
+
+  <script src="d3.js"></script>
+  <script type="text/javascript" src="vis.js"></script>
+</html>
