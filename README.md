@@ -9,4 +9,4 @@ In this project we are analyzing the movie dataset and finding the relation of m
 ## More
 [DEMO](https://nyu-vis-fall2018.github.io/project-template/)
 
-[Project Descrioption](project.pdf)
+[Project Description](https://slack-files.com/files-pri-safe/TCMEAQ22G-FEKMPE1DK/box_office_hit_vs_best_picture.pdf?c=1543968270-2a093b5f9c3492f64bdcdd37eefce73479f08b45)
