@@ -61,6 +61,13 @@ function showTooltip(text, coords) {
     .style("left", coords[0])
     .style("display", "block");
 }
+function showTooltipGenre(text, coords) {
+  d3.select("#tooltip")
+    .text(text)
+    .style("top", coords[1])
+    .style("left", coords[0])
+    .style("display", "block");
+}
 function drawBarsGrossChart(winnerData, scales, config) {
   // this is equivalent to 'let margin = config.margin; let container = config.container'
   let { margin, container } = config;
@@ -106,6 +113,24 @@ function drawAxesGrossChart(winnerData, scales, config) {
     .append("g")
     .style("transform", `translate(${margin.left}px,${margin.top}px)`)
     .call(axisY);
+
+  // container
+  //   .append("text")
+  //   .attr("class", "y label")
+  //   .attr("text-anchor", "end")
+  //   .attr("y", 2)
+  //   .attr("dy", ".80em")
+  //   .style("font-size", "12px")
+  //   .attr("transform", "rotate(-90)")
+  //   .text("Movie Count");
+  // container
+  //   .append("text")
+  //   .attr("class", "x label")
+  //   .attr("text-anchor", "end")
+  //   .attr("x", 500)
+  //   .attr("y", 500 - 6)
+  //   .style("font-size", "12px")
+  //   .text("Year");
 }
 
 function showData(data) {
@@ -127,8 +152,8 @@ function showData(data) {
 }
 
 function sizeChartGenre() {
-  let width = 1020;
-  let height = 700;
+  let width = 700;
+  let height = 500;
   let margin = {
     top: 10,
     bottom: 50,
@@ -183,13 +208,49 @@ function drawBarsGenreChart(result, scales, config1) {
     .attr("height", yScale.bandwidth())
     .attr("y", d => yScale(d.Genre))
     .attr("width", d => xScale(d.Count))
-    .attr("fill", "#2a5599");
+    .attr("fill", "#2a5599")
+    .on("mouseover", d => {
+      div
+        .transition()
+        .duration(200)
+        .style("opacity", 0.9);
+      div
+        .html("<b>Count: " + d.Count + "<br>")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+      // console.log(d);
+    })
+    .on("mouseleave", function(d) {
+      div
+        .transition()
+        .duration(500)
+        .style("opacity", 0);
+    });
 }
 function drawAxesGenreChart(result, scales, config1) {
   let { xScale, yScale } = scales;
   let { containerGenre, margin, height } = config1;
 
   let axisX = d3.axisBottom(xScale).ticks(5);
+
+  containerGenre
+    .append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 670)
+    .style("font-size", "12px")
+    .attr("y", 440)
+    .text("No.of Best Picture awards won");
+
+  containerGenre
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 15)
+    .style("font-size", "12px")
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Genre");
 
   containerGenre
     .append("g")
@@ -240,8 +301,8 @@ function showData1(data) {
   drawAxesGenreChart(result, scales, config1);
 }
 function sizeChartScatter() {
-  let width = 1020;
-  let height = 900;
+  let width = 700;
+  let height = 550;
   let margin = {
     top: 10,
     bottom: 50,
@@ -350,7 +411,17 @@ function drawCirclesScatterChart(data, scales, config2) {
         .duration(500)
         .style("opacity", 0);
     });
+  // update();
+
+  // function update() {
+  //   circles
+  //     .transition()
+  //     .ease(d3.easeLinear)
+  //     .duration(100)
+  //     .attr("height", 200);
+  // }
 }
+
 function drawAxesScatterChart(data, scales, config2) {
   let { xScale, yScale } = scales;
   let { containerScatter, margin, height } = config2;
@@ -370,6 +441,25 @@ function drawAxesScatterChart(data, scales, config2) {
     .append("g")
     .style("transform", `translate(${margin.left}px,${margin.top}px)`)
     .call(axisY);
+
+  containerScatter
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 40)
+    .attr("dy", ".75em")
+    .style("font-size", "12px")
+    .attr("transform", "rotate(-90)")
+    .text("Year");
+
+  containerScatter
+    .append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 650)
+    .attr("y", 490)
+    .style("font-size", "12px")
+    .text("Gross");
 }
 
 function showData2(data) {
@@ -386,8 +476,8 @@ function showData2(data) {
 }
 
 function showData_Score_Popularity(data) {
-  let bodyWidth = 700;
-  let bodyHeight = 600;
+  let bodyWidth = 630;
+  let bodyHeight = 400;
   let body = d3.select("#body1");
   let maxPopularityCount = d3.max(data, d => d.popularity);
   let minScore = d3.min(data, d => d.score);
@@ -431,6 +521,24 @@ function showData_Score_Popularity(data) {
         .duration(500)
         .style("opacity", 0);
     });
+  body
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 20)
+    .attr("dy", ".75em")
+    .style("font-size", "12px")
+    .attr("transform", "rotate(-90)")
+    .text("Percentage of movies(%)");
+
+  body
+    .append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 630)
+    .attr("y", 440)
+    .style("font-size", "12px")
+    .text("Rating(0.0-10.0)");
 }
 
 d3.csv("Score_Popularity1.csv").then(function(data_aux) {
@@ -443,8 +551,8 @@ d3.csv("Score_Popularity1.csv").then(function(data_aux) {
 let body = d3.select("#bodyyearmoviecount");
 
 function showData_Year_MovieCount(data) {
-  let bodyWidth = 700;
-  let bodyHeight = 600;
+  let bodyWidth = 600;
+  let bodyHeight = 400;
   let maxMovieCount = d3.max(data, d => d.MovieCount);
   let minYear = d3.min(data, d => d.Year);
   let maxYear = d3.max(data, d => d.Year);
@@ -487,6 +595,23 @@ function showData_Year_MovieCount(data) {
         .duration(500)
         .style("opacity", 0);
     });
+  body
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 2)
+    .attr("dy", ".80em")
+    .style("font-size", "12px")
+    .attr("transform", "rotate(-90)")
+    .text("Movie Count");
+  body
+    .append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", bodyWidth)
+    .attr("y", bodyHeight - 6)
+    .style("font-size", "12px")
+    .text("Year");
 }
 var div = d3
   .select("body")
@@ -501,12 +626,12 @@ d3.csv("Year-MovieCount.csv").then(function(data) {
 });
 
 function sizeChartGenreAll() {
-  let width = 1020;
-  let height = 700;
+  let width = 700;
+  let height = 580;
   let margin = {
-    top: 10,
-    bottom: 50,
-    left: 80,
+    top: 30,
+    bottom: 30,
+    left: 90,
     right: 40
   };
   //The body is the are that will be occupied by the bars.
@@ -581,6 +706,25 @@ function drawAxesGenreChartAll(result, scales, config4) {
     .append("g")
     .style("transform", `translate(${margin.left}px,${margin.top}px)`)
     .call(axisY);
+
+  containerAll
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 20)
+    .attr("dy", ".75em")
+    .style("font-size", "12px")
+    .attr("transform", "rotate(-90)")
+    .text("Genre");
+
+  containerAll
+    .append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 650)
+    .attr("y", 540)
+    .style("font-size", "12px")
+    .text("Count");
 }
 
 function showData3(data) {
