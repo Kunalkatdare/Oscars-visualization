@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+	  <!-- Bootstrap for some additional components (toggle swtich) -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/d3v3.js"></script>
+    <script src="js/dimple.js"></script>
+    <script src="js/createChartFuncs.js"></script>
+    <script src="d3.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="genreChartContainer" class="chartContainer">
+      <script type="text/javascript">
+        var start_year = 1915;
+        var end_year = 2013;
+        var data_source = "data/yearly_data.tsv";
+        var name = "IMDB Yearly Movie And Genre Counts (1915-2013)";
+        createGenreChart("#genreChartContainer",
+                        data_source,
+                        name,
+                        start_year,
+                        end_year);
+      </script>
+    </div>
+
+    <form class="form" id="genreToggleForm">
+      <div class="switch-field">
+        <!--   <div class="switch-title">Display Type</div> -->
+        <input type="radio" id="switch_left" name="switch" value="yes" checked/>
+        <label for="switch_left">Counts</label>
+        <input type="radio" id="switch_right" name="switch" value="no" />
+        <label for="switch_right">Percents</label>
+      </div>
+    </form>
+  </body>
+</html>
