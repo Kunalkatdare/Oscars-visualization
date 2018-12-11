@@ -14,7 +14,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
       rel="stylesheet"
@@ -25,18 +24,14 @@
       rel="stylesheet"
       type="text/css"
     />
-
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="js/d3v3.js"></script>
     <script src="js/dimple.js"></script>
     <script src="js/createChartFuncs.js"></script>
-
   </head>
 
   <body>
@@ -163,10 +158,7 @@
               <g id="yAxis1"></g>
             </svg>
 
-
-            <p>
-              The Graph Andrew goes here...!!!
-            </p>
+            <p>The Graph Andrew goes here...!!!</p>
 
             <div id="genreChartContainer" class="chartContainer">
               <script type="text/javascript">
@@ -174,24 +166,36 @@
                 var end_year = 2013;
                 var data_source = "data/yearly_data.tsv";
                 var name = "IMDB Yearly Movie And Genre Counts (1915-2013)";
-                createGenreChart("#genreChartContainer",
-                                data_source,
-                                name,
-                                start_year,
-                                end_year);
+                createGenreChart(
+                  "#genreChartContainer",
+                  data_source,
+                  name,
+                  start_year,
+                  end_year
+                );
               </script>
             </div>
 
             <form class="form" id="genreToggleForm">
               <div class="switch-field">
-                <!--   <div class="switch-title">Display Type</div> -->
-                <input type="radio" id="switch_left" name="switch" value="yes" checked/>
+                <!-- <div class="switch-title">Display Type</div> -->
+                <input
+                  type="radio"
+                  id="switch_left"
+                  name="switch"
+                  value="yes"
+                  checked
+                />
                 <label for="switch_left">Counts</label>
-                <input type="radio" id="switch_right" name="switch" value="no" />
+                <input
+                  type="radio"
+                  id="switch_right"
+                  name="switch"
+                  value="no"
+                />
                 <label for="switch_right">Percents</label>
               </div>
             </form>
-
 
             <p>
               Now lets analyze how people have received the movies that have

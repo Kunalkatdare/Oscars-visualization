@@ -551,8 +551,19 @@ d3.csv("Score_Popularity1.csv").then(function(data_aux) {
 let body = d3.select("#bodyyearmoviecount");
 
 function showData_Year_MovieCount(data) {
+  let datayear = data.filter(d => {
+    return d.Year > 0 && d.Year < 2016;
+  });
+  datayear.forEach(function(d) {
+    d.Year = +d.Year;
+  });
+  data = datayear;
+  console.log(data);
+
   let bodyWidth = 600;
   let bodyHeight = 400;
+  var x = d3.scaleTime().range([0, bodyWidth]);
+  var y = d3.scaleLinear().range([bodyHeight, 0]);
   let maxMovieCount = d3.max(data, d => d.MovieCount);
   let minYear = d3.min(data, d => d.Year);
   let maxYear = d3.max(data, d => d.Year);
@@ -568,7 +579,8 @@ function showData_Year_MovieCount(data) {
   body
     .append("g")
     .attr("transform", "translate(0," + bodyHeight + ")")
-    .call(d3.axisBottom(xScale));
+    .call(d3.axisBottom(xScale).tickFormat(d3.format("d")));
+
   valueline = d3
     .line()
     .x(d => xScale(d.Year))
@@ -577,42 +589,48 @@ function showData_Year_MovieCount(data) {
     .append("path")
     .datum(data)
     .attr("d", valueline)
-    .attr("class", "line")
-    .on("mouseover", d => {
-      div
-        .transition()
-        .duration(200)
-        .style("opacity", 0.9);
-      div
-        .html("<b>" + d.MovieCount + "<b> :Donated:")
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY - 28 + "px");
-      // console.log(d);
-    })
-    .on("mouseout", function(d) {
-      div
-        .transition()
-        .duration(500)
-        .style("opacity", 0);
-    });
+    .attr("class", "line");
+
   body
     .append("text")
-    .attr("class", "y label")
+    .attr("class", "axis axis--y")
     .attr("text-anchor", "end")
     .attr("y", 2)
+    .attr("fill", "#5D6971")
     .attr("dy", ".80em")
     .style("font-size", "12px")
     .attr("transform", "rotate(-90)")
     .text("Movie Count");
   body
     .append("text")
-    .attr("class", "x label")
+    .attr("class", "axis axis--x")
     .attr("text-anchor", "end")
     .attr("x", bodyWidth)
+    .attr("fill", "#5D6971")
     .attr("y", bodyHeight - 6)
     .style("font-size", "12px")
     .text("Year");
+
+  var focus = body
+    .append("g")
+    .attr("class", "focus")
+    .style("display", "none");
+
+  focus.append("circle").attr("r", 7.5);
+  var xdummy = d3.scaleTime().range([0, bodyWidth]);
+  var ydummy = d3.scaleLinear().range([bodyHeight, 0]);
+
+  focus
+    .append("text")
+    .attr("x", 15)
+    .attr("dy", ".31em");
+  body
+    .append("rect")
+    .attr("class", "overlay")
+    .attr("width", bodyWidth)
+    .attr("height", bodyHeight);
 }
+
 var div = d3
   .select("body")
   .append("div")
@@ -692,7 +710,6 @@ function drawAxesGenreChartAll(result, scales, config4) {
   let { containerAll, margin, height } = config4;
 
   let axisX = d3.axisBottom(xScale).ticks(5);
-
   containerAll
     .append("g")
     .style(

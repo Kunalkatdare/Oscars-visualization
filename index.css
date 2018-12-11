@@ -45,3 +45,37 @@ div.tooltip {
   clear: both;
   display: table;
 }
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #d4d8da;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: #6f257f;
+  stroke-width: 5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: #f1f3f3;
+  stroke: #6f257f;
+  stroke-width: 5px;
+}
+
+.hover-line {
+  stroke: #6f257f;
+  stroke-width: 2px;
+  stroke-dasharray: 3, 3;
+}
