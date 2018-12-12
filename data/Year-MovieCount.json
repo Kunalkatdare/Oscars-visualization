@@ -1,0 +1,366 @@
+[
+ {
+   "Year": 1916,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1920,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1925,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1927,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1929,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1930,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1932,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1933,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1934,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1935,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1936,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1937,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1938,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1939,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1940,
+   "MovieCount": 5
+ },
+ {
+   "Year": 1941,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1942,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1943,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1944,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1945,
+   "MovieCount": 4
+ },
+ {
+   "Year": 1946,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1947,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1948,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1949,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1950,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1951,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1952,
+   "MovieCount": 4
+ },
+ {
+   "Year": 1953,
+   "MovieCount": 4
+ },
+ {
+   "Year": 1954,
+   "MovieCount": 5
+ },
+ {
+   "Year": 1955,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1956,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1957,
+   "MovieCount": 2
+ },
+ {
+   "Year": 1958,
+   "MovieCount": 1
+ },
+ {
+   "Year": 1959,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1960,
+   "MovieCount": 3
+ },
+ {
+   "Year": 1961,
+   "MovieCount": 5
+ },
+ {
+   "Year": 1962,
+   "MovieCount": 8
+ },
+ {
+   "Year": 1963,
+   "MovieCount": 8
+ },
+ {
+   "Year": 1964,
+   "MovieCount": 10
+ },
+ {
+   "Year": 1965,
+   "MovieCount": 8
+ },
+ {
+   "Year": 1966,
+   "MovieCount": 6
+ },
+ {
+   "Year": 1967,
+   "MovieCount": 4
+ },
+ {
+   "Year": 1968,
+   "MovieCount": 11
+ },
+ {
+   "Year": 1969,
+   "MovieCount": 10
+ },
+ {
+   "Year": 1970,
+   "MovieCount": 12
+ },
+ {
+   "Year": 1971,
+   "MovieCount": 11
+ },
+ {
+   "Year": 1972,
+   "MovieCount": 9
+ },
+ {
+   "Year": 1973,
+   "MovieCount": 9
+ },
+ {
+   "Year": 1974,
+   "MovieCount": 9
+ },
+ {
+   "Year": 1975,
+   "MovieCount": 6
+ },
+ {
+   "Year": 1976,
+   "MovieCount": 10
+ },
+ {
+   "Year": 1977,
+   "MovieCount": 16
+ },
+ {
+   "Year": 1978,
+   "MovieCount": 16
+ },
+ {
+   "Year": 1979,
+   "MovieCount": 16
+ },
+ {
+   "Year": 1980,
+   "MovieCount": 24
+ },
+ {
+   "Year": 1981,
+   "MovieCount": 33
+ },
+ {
+   "Year": 1982,
+   "MovieCount": 30
+ },
+ {
+   "Year": 1983,
+   "MovieCount": 22
+ },
+ {
+   "Year": 1984,
+   "MovieCount": 31
+ },
+ {
+   "Year": 1985,
+   "MovieCount": 29
+ },
+ {
+   "Year": 1986,
+   "MovieCount": 26
+ },
+ {
+   "Year": 1987,
+   "MovieCount": 32
+ },
+ {
+   "Year": 1988,
+   "MovieCount": 31
+ },
+ {
+   "Year": 1989,
+   "MovieCount": 33
+ },
+ {
+   "Year": 1990,
+   "MovieCount": 30
+ },
+ {
+   "Year": 1991,
+   "MovieCount": 31
+ },
+ {
+   "Year": 1992,
+   "MovieCount": 34
+ },
+ {
+   "Year": 1993,
+   "MovieCount": 48
+ },
+ {
+   "Year": 1994,
+   "MovieCount": 54
+ },
+ {
+   "Year": 1995,
+   "MovieCount": 70
+ },
+ {
+   "Year": 1996,
+   "MovieCount": 99
+ },
+ {
+   "Year": 1997,
+   "MovieCount": 118
+ },
+ {
+   "Year": 1998,
+   "MovieCount": 134
+ },
+ {
+   "Year": 1999,
+   "MovieCount": 168
+ },
+ {
+   "Year": 2000,
+   "MovieCount": 171
+ },
+ {
+   "Year": 2001,
+   "MovieCount": 188
+ },
+ {
+   "Year": 2002,
+   "MovieCount": 209
+ },
+ {
+   "Year": 2003,
+   "MovieCount": 169
+ },
+ {
+   "Year": 2004,
+   "MovieCount": 214
+ },
+ {
+   "Year": 2005,
+   "MovieCount": 221
+ },
+ {
+   "Year": 2006,
+   "MovieCount": 239
+ },
+ {
+   "Year": 2007,
+   "MovieCount": 204
+ },
+ {
+   "Year": 2008,
+   "MovieCount": 225
+ },
+ {
+   "Year": 2009,
+   "MovieCount": 260
+ },
+ {
+   "Year": 2010,
+   "MovieCount": 230
+ },
+ {
+   "Year": 2011,
+   "MovieCount": 225
+ },
+ {
+   "Year": 2012,
+   "MovieCount": 221
+ },
+ {
+   "Year": 2013,
+   "MovieCount": 237
+ },
+ {
+   "Year": 2014,
+   "MovieCount": 252
+ },
+ {
+   "Year": 2015,
+   "MovieCount": 226
+ },
+ {
+   "Year": 2016,
+   "MovieCount": 106
+ }
+]
