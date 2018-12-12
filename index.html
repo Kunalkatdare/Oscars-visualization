@@ -32,6 +32,8 @@
     <script src="js/d3v3.js"></script>
     <script src="js/dimple.js"></script>
     <script src="js/createChartFuncs.js"></script>
+    <script src="js/radar.js"></script>   
+    <script src="js/slider.js"></script>
   </head>
 
   <body>
@@ -133,6 +135,9 @@
                 style="transform:translate(50px, 50px)"
               ></g>
             </svg>
+
+            <!-- <svg id="linechart" width="760" height="500"></svg> -->
+            
             <p>
               The number of movies being produced were affected greatly due to
               wars. Before 1950, US was involved in the World War 1 and World
@@ -335,6 +340,24 @@
               after 2004, this hasn't always been the case.
             </p>
 
+            <div style="width: 1000px; margin-left: -150px;">
+
+              <svg id="containerYearOscarGrossBudget" style="margin-left: -53px; border: none"></svg>
+
+              <div id="oscar" style="display: inline-block; width: 550px; text-align: center; margin-left: -50px"></div>
+              <div id="gross" style="display: inline-block; width: 500px; text-align: center; margin-left: -15px"></div>
+              <br>
+              <div id = "radar" style="display: inline-block; width: 500px;"> </div>
+              <div id = "radarGen" style="display: inline-block; width: 450px;"></div> 
+            </div>
+
+            <p>
+              The above visualization helps you compare the movies who won the Oscar and the highest grossing movies for that year. 
+              <br><i><b>So what do you think?
+              <br>
+              Does the visualization help you deduce if the revenue of the Oscar movies deteriorating?</b></i>
+            </p>
+
             <blockquote>
               Points to Take Away:<br />
               1. The Academy has shown that it prefers artistic movies which
@@ -354,47 +377,6 @@
 
     <hr />
 
-    <!--
-      Footer
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-              <ul class="list-inline text-center">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <span class="fa-stack fa-lg">
-                      <i class="fas fa-circle fa-stack-2x"></i>
-                      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <span class="fa-stack fa-lg">
-                      <i class="fas fa-circle fa-stack-2x"></i>
-                      <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <span class="fa-stack fa-lg">
-                      <i class="fas fa-circle fa-stack-2x"></i>
-                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul>
-              <p class="copyright text-muted">
-                Copyright &copy; Your Website 2018
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    -->
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -402,5 +384,10 @@
     <!-- Custom scripts for this template -->
     <script src="d3.js"></script>
     <script type="text/javascript" src="vis.js"></script>
+    <script type="text/javascript" src="js/line.js"></script>
+    <script src="js/radarScript.js"></script>
+    <script >
+      linechart();
+    </script>
   </body>
 </html>
