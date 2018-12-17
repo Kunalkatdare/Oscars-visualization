@@ -152,8 +152,8 @@ function showData(data) {
 }
 
 function sizeChartGenre() {
-  let width = 700;
-  let height = 500;
+  let width = 660;
+  let height = 450;
   let margin = {
     top: 10,
     bottom: 50,
@@ -237,7 +237,7 @@ function drawAxesGenreChart(result, scales, config1) {
     .append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 670)
+    .attr("x", 650)
     .style("font-size", "12px")
     .attr("y", 440)
     .text("No.of Best Picture awards won");
@@ -246,7 +246,7 @@ function drawAxesGenreChart(result, scales, config1) {
     .append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
-    .attr("y", 15)
+    .attr("y", 12)
     .style("font-size", "12px")
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
@@ -301,18 +301,18 @@ function showData1(data) {
   drawAxesGenreChart(result, scales, config1);
 }
 function sizeChartScatter() {
-  let width = 700;
-  let height = 550;
+  let width = 660;
+  let height = 450;
   let margin = {
     top: 10,
-    bottom: 50,
-    left: 80,
+    bottom: 40,
+    left: 50,
     right: 40
   };
   //The body is the are that will be occupied by the bars.
   let bodyHeight = height - margin.top - margin.bottom;
   let bodyWidth = width - margin.left - margin.right;
-  console.log(bodyHeight, bodyWidth);
+  // console.log(bodyHeight, bodyWidth);
 
   let containerScatter = d3.select("#scatterPlot");
   containerScatter.attr("width", width).attr("height", height);
@@ -364,7 +364,7 @@ function drawCirclesScatterChart(data, scales, config2) {
     },
     color = d3.scaleOrdinal(d3.schemeCategory10);
   function showTooltip2(text, coords) {
-    console.log(text);
+    // console.log(text);
     d3.select("#tooltip2")
       .text(text)
       .style("top", coords[1])
@@ -381,6 +381,7 @@ function drawCirclesScatterChart(data, scales, config2) {
     .style("fill", function(d) {
       return color(cValue(d));
     })
+
     .attr("height", yScale.bandwidth())
     .attr("y", d => yScale(d.Genre))
     .attr("width", d => xScale(d.Count))
@@ -411,22 +412,16 @@ function drawCirclesScatterChart(data, scales, config2) {
         .duration(500)
         .style("opacity", 0);
     });
-  // update();
-
-  // function update() {
-  //   circles
-  //     .transition()
-  //     .ease(d3.easeLinear)
-  //     .duration(100)
-  //     .attr("height", 200);
-  // }
 }
 
 function drawAxesScatterChart(data, scales, config2) {
   let { xScale, yScale } = scales;
   let { containerScatter, margin, height } = config2;
 
-  let axisX = d3.axisBottom(xScale).ticks(5);
+  let axisX = d3
+    .axisBottom(xScale)
+    .ticks(7)
+    .tickFormat(d3.format(".0s"));
 
   containerScatter
     .append("g")
@@ -446,7 +441,7 @@ function drawAxesScatterChart(data, scales, config2) {
     .append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
-    .attr("y", 40)
+    .attr("y", 06)
     .attr("dy", ".75em")
     .style("font-size", "12px")
     .attr("transform", "rotate(-90)")
@@ -456,13 +451,36 @@ function drawAxesScatterChart(data, scales, config2) {
     .append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 650)
-    .attr("y", 490)
+    .attr("x", 610)
+    .attr("fill", "#5D6971")
+    .attr("y", 440)
     .style("font-size", "12px")
     .text("Gross");
+  let legend = containerScatter
+    .append("g")
+    .attr("transform", "translate(" + 250 + "," + 300 + ")")
+    .attr("class", "legend")
+    .selectAll("g")
+    .data(data)
+    .enter()
+    .append("g");
+
+  // legend
+  //   .data(data)
+  //   .append("circle")
+  //   .attr("class", "dot")
+  //   .attr("cx", 300)
+  //   .attr("cy", function(d, i) {
+  //     return i * 20;
+  //   })
+  //   .attr("r", 3.8);
 }
 
 function showData2(data) {
+  let datasfs = data.filter(d => {
+    return d.gross > 10000000;
+  });
+  data = datasfs;
   data.sort((a, b) => {
     return d3.descending(a.title_year, b.title_year);
   });
@@ -476,8 +494,8 @@ function showData2(data) {
 }
 
 function showData_Score_Popularity(data) {
-  let bodyWidth = 630;
-  let bodyHeight = 400;
+  let bodyWidth = 600;
+  let bodyHeight = 350;
   let body = d3.select("#body1");
   let maxPopularityCount = d3.max(data, d => d.popularity);
   let minScore = d3.min(data, d => d.score);
@@ -535,8 +553,8 @@ function showData_Score_Popularity(data) {
     .append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 630)
-    .attr("y", 440)
+    .attr("x", 590)
+    .attr("y", 380)
     .style("font-size", "12px")
     .text("Rating(0.0-10.0)");
 }
@@ -558,10 +576,10 @@ function showData_Year_MovieCount(data) {
     d.Year = +d.Year;
   });
   data = datayear;
-  console.log(data);
+  // console.log(data);
 
-  let bodyWidth = 600;
-  let bodyHeight = 400;
+  let bodyWidth = 550;
+  let bodyHeight = 370;
   var x = d3.scaleTime().range([0, bodyWidth]);
   var y = d3.scaleLinear().range([bodyHeight, 0]);
   let maxMovieCount = d3.max(data, d => d.MovieCount);
@@ -644,8 +662,8 @@ d3.csv("Year-MovieCount.csv").then(function(data) {
 });
 
 function sizeChartGenreAll() {
-  let width = 700;
-  let height = 580;
+  let width = 660;
+  let height = 450;
   let margin = {
     top: 30,
     bottom: 30,
@@ -728,7 +746,7 @@ function drawAxesGenreChartAll(result, scales, config4) {
     .append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
-    .attr("y", 20)
+    .attr("y", 18)
     .attr("dy", ".75em")
     .style("font-size", "12px")
     .attr("transform", "rotate(-90)")
@@ -738,18 +756,18 @@ function drawAxesGenreChartAll(result, scales, config4) {
     .append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 650)
-    .attr("y", 540)
+    .attr("x", 630)
+    .attr("y", 440)
     .style("font-size", "12px")
     .text("Count");
 }
 
 function showData3(data) {
-  // console.log(data);
-  // let filteredGenres = data.filter(d => {
-  //   return d.winner > 0;
-  // });
-  // console.log(filteredGenres);
+  console.log(data);
+  let filteredGenres = data.filter(d => {
+    return d.winner > 0;
+  });
+  console.log(filteredGenres);
 
   let resultaux = data;
   // console.log(data);
@@ -765,11 +783,26 @@ function showData3(data) {
 
     return result;
   }, {});
+  // let resultaux = data;
+  // // console.log(data);
+  // result = resultaux.reduce((result, d) => {
+  //   let currentData = result[d.genre2] || {
+  //     Year: d.title_year,
+  //     Genre: d.genre1,
+  //     Count: 0
+  //   };
+
+  //   currentData.Count += 1;
+
+  //   result[d.genre1] = currentData;
+
+  //   return result;
+  // }, {});
 
   //We use this to convert the dictionary produced by the code above, into a list, that will make it easier to create the visualization.
   result = Object.keys(result).map(key => result[key]);
   result = result.sort((a, b) => d3.descending(a.Count, b.Count));
-  // console.log(result);
+  console.log(result);
 
   let config4 = sizeChartGenreAll();
   console.log(config4);
