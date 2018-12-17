@@ -456,14 +456,43 @@ function drawAxesScatterChart(data, scales, config2) {
     .attr("y", 440)
     .style("font-size", "12px")
     .text("Gross");
-  let legend = containerScatter
-    .append("g")
-    .attr("transform", "translate(" + 250 + "," + 300 + ")")
-    .attr("class", "legend")
-    .selectAll("g")
-    .data(data)
-    .enter()
-    .append("g");
+  containerScatter
+    .append("rect")
+    .attr("class", "dot")
+    .attr("x", 490)
+    .attr("y", 264)
+    .attr("width", 160)
+    .attr("height", 64)
+    .attr("r", 6)
+    .style("fill", "white");
+
+  containerScatter
+    .append("circle")
+    .attr("class", "dot")
+    .attr("cx", 500)
+    .attr("cy", 310)
+    .attr("r", 6)
+    .style("fill", "#1f77b3");
+
+  containerScatter
+    .append("circle")
+    .attr("class", "dot")
+    .attr("cx", 500)
+    .attr("cy", 280)
+    .attr("r", 6)
+    .style("fill", "#ffa502");
+  containerScatter
+    .append("text")
+    .attr("x", 510)
+    .attr("y", 285)
+    .style("font-size", "14px")
+    .text("Best Picture winners");
+  containerScatter
+    .append("text")
+    .attr("x", 510)
+    .attr("y", 315)
+    .style("font-size", "14px")
+    .text("Others");
 
   // legend
   //   .data(data)
