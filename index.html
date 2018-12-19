@@ -32,7 +32,7 @@
     <script src="js/d3v3.js"></script>
     <script src="js/dimple.js"></script>
     <script src="js/createChartFuncs.js"></script>
-    <script src="js/radar.js"></script>   
+    <!-- <script src="js/radar.js"></script>    -->
     <script src="js/slider.js"></script>
   </head>
 
@@ -84,7 +84,8 @@
                   everyday, let's dig them through to solve the untangeable!
                 -->
               </h2>
-              <h5>Created by <br>Vatsal Shah<br>Kunal Katdare<br>Ajay Shete</h5>
+              <span class="meta">Created by Vatsal - Kunal - Ajay <br />For Info Viz
+                Project</span>
             </div>
           </div>
         </div>
@@ -351,15 +352,16 @@
               after 2004, this hasn't always been the case.
             </p>
 
-            <div style="width: 1000px; margin-left: -150px;">
+            <div style="width: 1100px; margin-left: -150px;">
 
-              <svg id="containerYearOscarGrossBudget" style="margin-left: -53px; border: none"></svg>
+              <svg id="containerYearOscarGrossBudget" style="border: none"></svg>
 
-              <div id="oscar" style="display: inline-block; width: 550px; text-align: center; margin-left: -50px"></div>
-              <div id="gross" style="display: inline-block; width: 500px; text-align: center; margin-left: -15px"></div>
+              <p style="display: inline-block; width: 500px; text-align: center;"> ::The Oscar Award Winner Best Picture was ::</p>
+              <p style="display: inline-block; width: 500px; text-align: center"> ::The Most Profitable Picture was ::</p>
+              <div id="oscar" style="display: inline-block; width: 500px; text-align: center;"></div>
+              <div id="gross" style="display: inline-block; width: 500px; text-align: center;"></div>
               <br>
-              <div id = "radar" style="display: inline-block; width: 500px;"> </div>
-              <div id = "radarGen" style="display: inline-block; width: 450px;"></div> 
+              <div class="radarChart" style="display: inline-block; padding-left: 300px; text-align: center; border: none"></div> 
             </div>
 
             <p>
@@ -396,6 +398,7 @@
     <script src="d3.js"></script>
     <script type="text/javascript" src="vis.js"></script>
     <script type="text/javascript" src="js/line.js"></script>
+    <script src="js/impose.js"></script>
     <script src="js/radarScript.js"></script>
     <script >
       linechart();
