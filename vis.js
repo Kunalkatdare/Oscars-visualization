@@ -588,7 +588,7 @@ function showData_Score_Popularity(data) {
     .text("Rating(0.0-10.0)");
 }
 
-d3.csv("Score_Popularity1.csv").then(function(data_aux) {
+d3.csv("data/Score_Popularity1.csv").then(function(data_aux) {
   data_aux.forEach(function(d) {
     d.popularity = +d.popularity * 100;
     d.score = +d.score;

@@ -34,6 +34,7 @@
     <script src="js/dimple.js"></script>
     <script src="js/createChartFuncs.js"></script>
     <script type="text/javascript" src="js/line.js"></script>
+    <script type="text/javascript" src="js/lineScore.js"></script>
     <script src="js/slider.js"></script>
   </head>
 
@@ -225,9 +226,13 @@
               that most of the movies that are released are average. The descend
               after 8 shows that very few movies are made that are exceptional.
             </p>
-            <svg id="ScorePopularity" width="700" height="500">
+            <!-- <svg id="ScorePopularity" width="700" height="500">
               <g id="body1" style="transform:translate(50px, 50px)"></g>
-            </svg>
+            </svg> -->
+            <svg id="lineScorechart" width="660" height="400"></svg>
+            <script >
+              lineScorechart();
+            </script>
 
             <p>
               This was all the analysis that was done on the movie data set as a

@@ -1,45 +1,41 @@
 
-function linechart(){
+function lineScorechart(){
 
-var line_svg = d3v4.select("#linechart"),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
+var line_svg = d3v4.select("#lineScorechart"),
+    margin = {top: 20, right: 10, bottom: 30, left: 40},
     width = +line_svg.attr("width") - margin.left - margin.right,
     height = +line_svg.attr("height") - margin.top - margin.bottom;
-
-var parseTime = d3v4.timeParse("%Y")
-    bisectDate = d3v4.bisector(function(d) { return d.Year; }).left;
 
 var x = d3v4.scaleLinear().range([0, width]);
 var y = d3v4.scaleLinear().range([height, 0]);
 
+var bisectDate = d3v4.bisector(function(d) { return d.score; }).left;
+
 var line = d3v4.line()
-    .x(function(d) { return x(d.Year); })
-    .y(function(d) { return y(d.MovieCount); });
+    .x(function(d) { return x(d.score); })
+    .y(function(d) { return y(d.popularity); });
 
 var g = line_svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3v4.json("data/Year-MovieCount.json", function(error, data) {
+d3v4.csv("data/Score_Popularity1.csv", function(error, data) {
     if (error) throw error;
-
-    let datayear = data.filter(d => {
-    return d.Year > 0 && d.Year < 2016;
+    data.forEach(function(d) {
+      d.score = +d.score;
+      d.popularity = (+d.popularity) * 100;
     });
-    datayear.forEach(function(d) {
-      d.Year = +d.Year;
-    });
-    data = datayear;
 
-    console.log("In the line chart");
+    console.log("In the line score chart");
     console.log(data);
 
-    x.domain(d3v4.extent(data, function(d) { return d.Year; }));
-    y.domain([d3v4.min(data, function(d) { return d.MovieCount; }), d3v4.max(data, function(d) { return d.MovieCount; })]);
+    x.domain(d3v4.extent(data, function(data) { return data.score; }));
+    y.domain([d3v4.min(data, function(data) { return data.popularity; }), d3v4.max(data, function(d) { return d.popularity; })]);
 
+    console.log(x,y);
     g.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3v4.axisBottom(x).ticks(20).tickFormat(d3v4.format("d")))
+        .call(d3v4.axisBottom(x).ticks(20))
         .append("text")
         .attr("class", "axis-title")
         .attr("transform", "translate("+width+",15)")
@@ -48,11 +44,11 @@ d3v4.json("data/Year-MovieCount.json", function(error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "#5D6971")
-        .text("Year");
+        .text("Rating (0.0 - 10.0)");
 
     g.append("g")
         .attr("class", "axis axis--y")
-        .call(d3v4.axisLeft(y).ticks(6).tickFormat(function(d) { return d; }))
+        .call(d3v4.axisLeft(y).ticks(10))
       .append("text")
         .attr("class", "axis-title")
         .attr("transform", "rotate(-90)")
@@ -60,8 +56,9 @@ d3v4.json("data/Year-MovieCount.json", function(error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "#5D6971")
-        .text("Count of Movies");
+        .text("Percentage of Movies (%)");
 
+    console.log(data);
     g.append("path")
         .datum(data)
         .attr("class", "line")
@@ -98,15 +95,17 @@ d3v4.json("data/Year-MovieCount.json", function(error, data) {
         .on("mousemove", mousemove);
 
     function mousemove() {
-      var x0 = x.invert(d3v4.mouse(this)[0]),
-          i = bisectDate(data, x0, 1);
-        console.log(i);
-      var d0 = data[i - 1],
+      var x0 = x.invert(d3v4.mouse(this)[0]);
+      // console.log(x0);
+      var  i = bisectDate(data, x0, 1);
+      console.log()
+          d0 = data[i - 1],
           d1 = data[i],
-          d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
-      focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.MovieCount) + ")");
-      focus.select("text").text(function() { return d.Year+" : "+d.MovieCount; });
-      focus.select(".x-hover-line").attr("y2", height - y(d.MovieCount));
+          d = x0 - d0.score > d1.score - x0 ? d1 : d0;
+      focus.attr("transform", "translate(" + x(d.score) + "," + y(d.popularity) + ")");
+      console.log(x(d.score), y(d.popularity));
+      focus.select("text").text(function() { return d.score+" : "+d3.format(",.3n")(d.popularity)+"%" });
+      focus.select(".x-hover-line").attr("y2", height - y(d.popularity));
       focus.select(".y-hover-line").attr("x2", width + width);
     }
 });
