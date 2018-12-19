@@ -30,9 +30,10 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <script src="js/d3v3.js"></script>
+    <script src="js/d3v4.js"></script>
     <script src="js/dimple.js"></script>
     <script src="js/createChartFuncs.js"></script>
-    <!-- <script src="js/radar.js"></script>    -->
+    <script type="text/javascript" src="js/line.js"></script>
     <script src="js/slider.js"></script>
   </head>
 
@@ -127,14 +128,18 @@
               exponential growth in the number of movies made during the
               1990-2000.
             </p>
-            <svg id="containerYearMovieCount" width="700" height="500">
+            <!-- <svg id="containerYearMovieCount" width="700" height="500">
               <g
                 id="bodyyearmoviecount"
                 style="transform:translate(50px, 50px)"
               ></g>
             </svg>
-
-            <!-- <svg id="linechart" width="760" height="500"></svg> -->
+ -->
+            <svg id="linechart" width="650" height="470"></svg>
+            <script >
+              
+              linechart();
+            </script>
             
             <p>
               The number of movies being produced were affected greatly due to
@@ -397,11 +402,9 @@
     <!-- Custom scripts for this template -->
     <script src="d3.js"></script>
     <script type="text/javascript" src="vis.js"></script>
-    <script type="text/javascript" src="js/line.js"></script>
+    
     <script src="js/impose.js"></script>
     <script src="js/radarScript.js"></script>
-    <script >
-      linechart();
-    </script>
+    
   </body>
 </html>
