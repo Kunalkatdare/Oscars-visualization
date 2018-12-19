@@ -208,7 +208,7 @@ function drawBarsGenreChart(result, scales, config1) {
     .attr("height", yScale.bandwidth())
     .attr("y", d => yScale(d.Genre))
     .attr("width", d => xScale(d.Count))
-    .attr("fill", "#2a5599")
+    .attr("fill", "#bf812d")
     .on("mouseover", d => {
       div
         .transition()
@@ -385,7 +385,7 @@ function drawCirclesScatterChart(data, scales, config2) {
     .attr("height", yScale.bandwidth())
     .attr("y", d => yScale(d.Genre))
     .attr("width", d => xScale(d.Count))
-    .attr("fill", "#2a5599")
+    .attr("fill", "#bf812d")
     .on("mouseover", d => {
       div
         .transition()
@@ -750,7 +750,7 @@ function drawBarsGenreChartAll(result, scales, config4) {
     .attr("height", yScale.bandwidth())
     .attr("y", d => yScale(d.Genre))
     .attr("width", d => xScale(d.Count))
-    .attr("fill", "#2a5599");
+    .attr("fill", "#fdbf6f");
 }
 function drawAxesGenreChartAll(result, scales, config4) {
   let { xScale, yScale } = scales;
