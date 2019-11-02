@@ -1,8 +1,5 @@
 # Box Office Hit or Best Picture? You Can Rarely Have Both.
-**Authors**: Ajay Shete (abs717@nyu.edu), Kunal Katdare (kpk309@nyu.edu), Vatsal Shah (vds254@nyu.edu)
-
-Online: Group 5 
-
+**Author**: Kunal Katdare
 ![Screenshot](https://marketingland.com/wp-content/ml-loads/2015/08/movie-film-video-production-ss-1920-800x450.jpg)
 
 
